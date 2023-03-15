@@ -1,0 +1,25 @@
+
+div{
+border-style: double;
+height: 20rem;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+
+}
+
+button{
+    height: 8rem;
+    box-shadow: 3px 3px 3px black;
+    border: none;
+    border-radius: 1rem;
+    background-color: rgb(255, 255, 255);
+}
+
+img{
+
+border-radius: 1rem;
+}
+
+
