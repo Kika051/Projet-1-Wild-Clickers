@@ -1,0 +1,20 @@
+div{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+border-style: double;
+height: 20rem;
+}
+
+button{
+    height: 8rem;
+}
+
+span {
+padding: 1rem; 
+margin-top: 2rem;
+background-color: aqua;   
+border-style:inset ;
+border-radius: 30px;
+}
