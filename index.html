@@ -4,57 +4,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CLICKER</title>
-</head>
-<body>
-    <script src="JSCLICKER.js"></script>
-    <div class="clickers">
-        <div onclick="incrementClick()">
-            <button onclick="incrementClick()">
-                <img src="logo-détourée.png" onclick="" alt="Mon logo" id="logo">
-            </button>
-            </div>
-            <h1 id="counter-label">0</h1>
-        </div>
     <link rel="stylesheet" href="css/style.css">
-    <title>Cookie Clicker</title>
+    <title>WILD CLICKER</title>
 </head>
 <body>
+
     <div class="navigateur">
         <img class="logoNavigateur" src="img/logo-wild-code-school-white.png" alt="Wild code school">
-    <button id="buttonSave" onclick="save()">
-        <span>Save</span>
-    </button>
+        <button id="buttonSave" onclick="save()">
+            <span>Save</span>
+        </button>
     </div>
+
+    <div class="clickers">
+            <button id="logoClicker" onclick="incrementClick()">
+                <img src="img/logo-détourée.png" onclick="" alt="Mon logo" id="logo">
+            </button>
+        <span id="counter-label">0</span>
+    </div>
+
     <footer>
         <h1> STORE </h1>
-        <div class="BonusList">
-            <div class="Bonus1">
-                <h2> Devellopeur </h2>
+        <div id="BonusList">
+
+            <div id="Bonus1">
+                <h2> Developpeur </h2>
                 <h3> -1$ </h3>
                 <h4> -1 </h4>
-                <img src="img\develloper.png" alt="Devellopeur">
+                <img src="img/develloper.png" alt="Devellopeur">
             </div>
-            <div class="Bonus2">
+
+            <div id="Bonus2">
                 <h2> PC </h2>
                 <h3> -1$ </h3>
-                <h4> -1 </h4>   
-                <img src="img\pc copie.png" alt="PC">     
+                <h4> -1 </h4>
+                <img src="img/pc copie.png" alt="PC">
             </div>
-            <div class="Bonus3"> 
+
+            <div id="Bonus3">
                 <h2> Terminal </h2>
                 <h3> -1$ </h3>
                 <h4> -1 </h4>
-                <img src="img\Terminal.png" alt="Terminal">
+                <img src="img/Terminal.png" alt="Terminal">
             </div>
-            <div class="Bonus4"> 
+
+            <div id="Bonus4">
                 <h2> JavaScript </h2>
                 <h3> -1$ </h3>
                 <h4> -1 </h4>
-                <img src="img\JS.png" alt="JavaScript">
             </div>
         </div>
     </footer>
-    <script type="text/javascript" src="js/JSCLICKER.js"></script> 
+
+    <script type="text/javascript" src="js/JSCLICKER.js"></script>
+
 </body>
+
 </html>
