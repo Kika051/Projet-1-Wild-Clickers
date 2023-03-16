@@ -1,0 +1,147 @@
+body {
+    margin: 0;
+}
+
+footer {
+    margin: 0;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    height: 10rem;
+    width: 100%;
+    border-top-right-radius: 0.75rem;
+    border-top-left-radius: 0.75rem;
+    background-color: #FB127B;
+}
+
+footer h1 {
+    margin-top: 0.25rem;
+    height: 0.5rem;
+    font-size:x-large;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.BonusList div h2, .BonusList div h3, .BonusList div h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    color: white;
+}
+
+.BonusList {
+    margin-top: 2.3rem;
+    display:flex;
+    justify-content: space-around;
+}
+
+.BonusList div {
+    background-color: #cf115a;
+    border-radius: 0.5rem;
+    height: 5.5rem;
+    width: 5.5rem;
+    z-index:revert;
+}
+
+.BonusList div h2 {
+    background-color: #ae0b4a;
+    border-radius: 0.1rem;  
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 7%;
+    font-size: smaller;
+}
+
+.BonusList div h3 {
+    background-color: #ae0b4a;
+    border-radius: 0.1rem;  
+    width: 80%;
+    margin-left: 10%;
+    margin-top: -10%;
+    font-size: smaller;
+}
+
+.BonusList div h4 {
+    opacity: 95%;
+    border-radius: 0.1rem;
+    margin-top: 0%;      
+    width: 100%;
+    font-size:large;
+    -webkit-text-stroke: 0.075rem #000000;
+}
+
+.BonusList div img {
+    margin-bottom: 100%;
+    margin-top: -60%;
+    width: 45%;
+    height: 45%;
+}
+
+@media screen and (min-width : 768px){
+    footer {
+        margin: 0;
+        text-align:center;
+        position: fixed;
+        right: 0;
+        height: 90%;
+        width: 20rem;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 1rem;
+        background-color: #FB127B;
+    }
+
+    .BonusList {
+        margin-top: 2rem;
+        height: 90%;
+        flex-direction: column;
+        justify-content:flex-start;
+    }
+
+    footer h1 {
+        margin-top: 0.75rem;
+    }
+
+    .BonusList div {
+        margin-top: 3%;
+        background-color: #cf115a;
+        border-radius: 0.5rem;
+        height: 5rem;
+        margin-left: 5%;
+        width: 90%;
+    }
+    
+    .BonusList div h2 {
+        width: 65%;
+        margin-left: 2%;
+        margin-top: 2%;
+        font-size: smaller;
+    }
+    
+    .BonusList div h3 {
+        background-color: #ae0b4a;
+        border-radius: 0.1rem;  
+        width: 55%;
+        margin-left: 7%;
+        margin-top: -1%;
+        font-size: smaller;
+    }
+    
+    .BonusList div h4 {
+        background-color: #ae0b4a;  
+        border-radius: 0.1rem;      
+        width: 45%;
+        margin-left: 12%;
+        margin-top: -2%;
+        font-size: smaller;
+        -webkit-text-stroke-width: 0;
+    }
+    
+    .BonusList div img {
+        float:right;
+        margin-right: 3%;
+        margin-top: -29%;
+        width: 25%;
+        height: 90%;
+    }
+
+}
