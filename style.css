@@ -11,10 +11,10 @@ button{
     height: 8rem;
 }
 
-span {
-padding: 1rem; 
-margin-top: 2rem;
-background-color: aqua;   
-border-style:inset ;
-border-radius: 30px;
-}
+span{
+    padding: 1rem; 
+    margin-top: 2rem;
+    background-color:aqua;
+    border-style:inset;
+    border-radius: 30px;
+    }
