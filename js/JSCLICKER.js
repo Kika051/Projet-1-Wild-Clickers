@@ -1,4 +1,8 @@
 var counterVal = 0;
+function save(){
+    alert("Votre partie est sauvegarder")
+}
+
 function incrementClick() {
     updateDisplay(++counterVal);
 }
@@ -12,7 +16,4 @@ function updateDisplay(val) {
     document.getElementById("counter-label").innerHTML = val;
 }
 
-document.getElementById("clickers").addEventListener("click", function() {
-    this.style.transform = "scale(1.2)";
-  });
   
