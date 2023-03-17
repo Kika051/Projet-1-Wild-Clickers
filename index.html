@@ -1,41 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Cookie Clicker</title>
+    <link rel="stylesheet" href="css/style.css">
+    <title>WILD CLICKER</title>
 </head>
+
 <body>
+
+    <div class="navigateur">
+        <img class="logoNavigateur" src="img/logo-wild-code-school-white.png" alt="Wild code school">
+        <button id="buttonSave" onclick="save()">
+            <span>Save</span>
+        </button>
+    </div>
+<div class="clickers">
+        <button id="logoClicker" onclick="incrementClick()">
+            <img src="img/logo-detouree.png" onclick="" alt="Mon logo" id="logo">
+        </button>
+        <span id="counter-label">0</span>
+    </div>
     <footer>
         <h1> STORE </h1>
-        <div class="BonusList">
-            <div class="Bonus1">
-                <h2> Devellopeur </h2>
-                <h3> -1$ </h3>
-                <h4> -1 </h4>
-                <img src="C:\Users\barth\Desktop\Wild School\Cookie Clicker\img\develloper.png" alt="Devellopeur">
+        <div id="BonusList">
+
+            <div id="Bonus1">
+                <h2> Dev </h2>
+                <h3> Prix</h3>
+                <h4>Quantité</h4>
+                <img src="img/develloper.png" alt="Devellopeur">
             </div>
-            <div class="Bonus2">
+
+            <div id="Bonus2">
                 <h2> PC </h2>
-                <h3> -1$ </h3>
-                <h4> -1 </h4>   
-                <img src="C:\Users\barth\Desktop\Wild School\Cookie Clicker\img\pc copie.png" alt="PC">     
+                <h3> Prix</h3>
+                <h4>Quantité </h4>
+                <img src="img/pc copie.png" alt="PC">
             </div>
-            <div class="Bonus3"> 
+
+            <div id="Bonus3">
                 <h2> Terminal </h2>
-                <h3> -1$ </h3>
-                <h4> -1 </h4>
-                <img src="C:\Users\barth\Desktop\Wild School\Cookie Clicker\img\Terminal.png" alt="Terminal">
+                <h3> Prix </h3>
+                <h4> Quantité</h4>
+                <img src="img/Terminal.png" alt="Terminal">
             </div>
-            <div class="Bonus4"> 
-                <h2> JavaScript </h2>
-                <h3> -1$ </h3>
-                <h4> -1 </h4>
-                <img src="C:\Users\barth\Desktop\Wild School\Cookie Clicker\img\JS.png" alt="JavaScript">
-            </div>
+
+            <div id="Bonus4">
+                <h2> JS </h2>
+                <h3> Prix</h3>
+                <h4> Quantité</h4>
+                <img src="img/JS.png" alt="Logo java">
+</div>
         </div>
     </footer>
+
+    <script type="text/javascript" src="js/JSCLICKER.js"></script>
+
 </body>
+
 </html>
