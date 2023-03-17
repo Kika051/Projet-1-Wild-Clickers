@@ -2,11 +2,13 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
+    background-image: url("../img/wallpaper\ petit.png");
 }
 
 .logoNavigateur {
     height: 4rem;
-    margin: 7px;
+    margin-top: 0.5rem;
+   
 }
 
 .navigateur {
@@ -16,11 +18,11 @@ body {
     border-bottom-right-radius: 1rem;
     color: white;
     height: 5rem;
+    box-shadow: 0px 4px 4px lightgray;
 }
 
 #buttonSave {
     float: right;
-    display: inline-block;
     background-color: #fb127b;
     border-radius: 10px;
     border: 4px double white;
@@ -32,6 +34,8 @@ body {
     cursor: pointer;
     margin: 5px;
     margin-top: 1rem;
+    box-shadow: 0px 2px 2px white;
+    margin-right: 1rem;
 }
 
 #buttonSave span {
@@ -69,8 +73,11 @@ body {
 #logoClicker {
     background-color: transparent;
     align-items: center;
-    color: #FB127B;
     border: none;
+    box-shadow: 0px 6px 6px lightgray;
+    border-radius: 25rem;
+    background-color: #FB127B;
+    border: 4px double white;
 }
 
 #logoClicker:hover {
@@ -112,30 +119,14 @@ body {
 }
 
 #counter-label {
-    background-color: #FB127B;
+    
     padding: 1rem;
-    margin-top: 2rem;
-    border-style: inset;
-    border-radius: 30px;
-    width: 10rem;
+    margin-top: 5rem;
     font-weight: bold;
+    color: #FB127B;
+    font-size: xx-large;
+
 }
-
-/*------------*/
-
-
-/*div{
-    border-style: double;
-    height: 20rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-button {
-    height: 8rem;
-}*/
 
 footer {
     margin: 0;
@@ -146,14 +137,14 @@ footer {
     width: 100%;
     border-top-right-radius: 0.75rem;
     border-top-left-radius: 0.75rem;
-    background-color: #FB127B;
+    background-color: #fb127b;
+    box-shadow top: 4px 4px 4px lightgray;
 }
 
 h1 {
     margin-top: 0.25rem;
     height: 0.5rem;
     font-size: x-large;
-    font-family: Arial, Helvetica, sans-serif;
     color: white;
 }
 
@@ -161,7 +152,6 @@ h1 {
 #BonusList div h2,
 #BonusList div h3,
 #BonusList div h4 {
-    font-family: Arial, Helvetica, sans-serif;
     font-size: medium;
     color: white;
 }
@@ -221,17 +211,13 @@ h1 {
 @media screen and (min-width: 768px) {
 
     .clickers {
-        margin-top: 6rem;
+        margin-top: 13rem;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         text-align: center;
         margin-right: 20rem;
-    }
-
-    button {
-        width: 200px;
     }
 
     footer {
@@ -243,7 +229,7 @@ h1 {
         width: 20rem;
         border-top-left-radius: 1rem;
         border-bottom-left-radius: 1rem;
-        background-color: #FB127B;
+        background-color: #ae0b4a;
     }
 
     #BonusList {
@@ -257,14 +243,6 @@ h1 {
         margin-top: 0.75rem;
     }
     
-    .clickers {
-        margin-top: 13rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        text-align: center;
-    }
 
     #BonusList div {
         margin-top: 3%;
