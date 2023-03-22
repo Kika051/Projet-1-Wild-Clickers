@@ -18,7 +18,8 @@ body {
     border-bottom-right-radius: 1rem;
     color: white;
     height: 5rem;
-    box-shadow: 0px 4px 4px lightgray;
+    box-shadow: 4px 4px 4px lightgray;
+
 }
 
 #buttonSave {
@@ -74,7 +75,7 @@ body {
     background-color: transparent;
     align-items: center;
     border: none;
-    box-shadow: 0px 6px 6px lightgray;
+    box-shadow: 0px 5px 5px lightgray;
     border-radius: 25rem;
     background-color: #FB127B;
     border: 4px double white;
@@ -119,26 +120,26 @@ body {
 }
 
 #counter-label {
-    
     padding: 1rem;
     margin-top: 5rem;
+    border-radius: 30px;
+    width: 10rem;
     font-weight: bold;
-    color: #FB127B;
-    font-size: xx-large;
-
+    color: #fb127b;
+    text-shadow: 0px 4px 0px lightgray;
+    font-size: x-large;
 }
 
 footer {
-    margin: 0;
     text-align: center;
     position: fixed;
     bottom: 0;
     height: 10rem;
     width: 100%;
-    border-top-right-radius: 0.75rem;
-    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
     background-color: #fb127b;
-    box-shadow top: 4px 4px 4px lightgray;
+    box-shadow: 0px -5px 5px lightgray;
 }
 
 h1 {
@@ -148,62 +149,13 @@ h1 {
     color: white;
 }
 
+#BonusList{
+    display: grid;
+    grid-template-columns: calc(100%/4) calc(100%/4) calc(100%/4) calc(100%/4);
 
-#BonusList div h2,
-#BonusList div h3,
-#BonusList div h4 {
-    font-size: medium;
-    color: white;
+
 }
 
-#BonusList {
-    margin-top: 2.3rem;
-    display: flex;
-    justify-content: space-around;
-}
-
-#BonusList div {
-    background-color: #cf115a;
-    border-radius: 0.5rem;
-    height: 5.5rem;
-    width: 5.5rem;
-    z-index: revert;
-}
-
-#BonusList div h2 {
-    background-color: #ae0b4a;
-    border-radius: 0.1rem;
-    width: 90%;
-    margin-left: 5%;
-    margin-top: 7%;
-    font-size: smaller;
-    font-weight: lighter;
-}
-
-#BonusList div h3 {
-    background-color: #ae0b4a;
-    border-radius: 0.1rem;
-    width: 80%;
-    margin-left: 10%;
-    margin-top: -10%;
-    font-size: smaller;
-    font-weight: lighter;
-}
-
-#BonusList div h4 {
-    opacity: 0;
-    border-radius: 0.1rem;
-    margin-top: 0%;
-    width: 100%;
-   
-}
-
-#BonusList div img {
-    margin-bottom: 100%;
-    margin-top: -60%;
-    width: 45%;
-    height: 45%;
-}
 
 
 
@@ -219,6 +171,12 @@ h1 {
         text-align: center;
         margin-right: 20rem;
     }
+    
+    #logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
     footer {
         margin: 0;
@@ -233,10 +191,8 @@ h1 {
     }
 
     #BonusList {
-        margin-top: 2rem;
-        height: 90%;
-        flex-direction: column;
-        justify-content: flex-start;
+        grid-template-columns: 95%;
+        justify-items: center;
     }
 
     footer h1 {
