@@ -18,7 +18,7 @@ function updateDisplay(val) {
 
 
 }
-//julien
+/* julien */
 
 const compteur = document.querySelector('#counter-label');
 
