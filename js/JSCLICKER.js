@@ -62,3 +62,32 @@ setInterval(() =>{
     ajoutPoints(nombreDeveloppeur * 2);
     document.querySelector('#developpeur').textContent;
 },1000)
+
+//alexandre
+
+const Terminal = document.querySelector('#Terminal');
+
+const nbTerminalaffichage = document.querySelector('#nbTerminal');
+
+const prixTerminalAffichage = document.querySelector('#prixTerminalAffichage');
+
+let nombreTerminal = 0;
+let prixTerminal = 100;
+
+Terminal.addEventListener('click', () =>{
+    if (points >=prixTerminal){
+        retirerPoints(prixTerminal);
+        nombreTerminal ++;
+        nbTerminalaffichage.textContent = nombreTerminal;
+        prixTerminal = prixTerminal *2;
+        prixTerminalAffichage.textContent = prixTerminal;
+    }
+    else{
+        alert('Pas assez de clic');
+    }
+})
+
+setInterval(() =>{
+    ajoutPoints(nombreTerminal * 10);
+    document.querySelector('#Teminal').textContent;
+},1000)
