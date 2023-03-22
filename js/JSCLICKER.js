@@ -1,6 +1,7 @@
-let points = 0
+let points = JSON.parse(localStorage.getItem("Points"))
 
 function save(){
+    localStorage.setItem("Points",points)
     alert("Votre partie est sauvegarder")
 }
 
@@ -79,7 +80,7 @@ pc.addEventListener('click',() =>{
         retirerPoints(prixPc);
         nombrePc++;
         nbPcAffichage.textContent = nombrePc;
-        prixPc = prixPc *4;
+        prixPc = prixPc *2;
         prixPcAffichage.textContent = prixPc;
     }
     else{
@@ -120,3 +121,26 @@ setInterval(() =>{
     ajoutPoints(nombreTerminal * 100);
     document.querySelector('#Teminal').textContent;
 },1000)
+
+// js Elodie item js
+
+const compteurjs = document.querySelector('#Javascript');
+let prixJavascriptAffichage = document.querySelector('#prixJavascriptAffichage').textContent;
+let nbJavascript = document.querySelector('#nbJavascript').textContent;
+
+compteurjs.addEventListener('click', function () {
+    if (points >= prixJavascriptAffichage) {
+        retirerPoints(prixJavascriptAffichage);
+        document.querySelector('#nbJavascript').textContent = ++nbJavascript;
+        prixJavascriptAffichage = prixJavascriptAffichage *2;
+        document.querySelector('#prixJavascriptAffichage').textContent = prixJavascriptAffichage;
+    }
+    else {
+        alert('il vous faut encore cliquer un peu');
+    }
+});
+
+setInterval(() => {
+    ajoutPoints(nbJavascript * 2);
+    document.querySelector('#Javascript').textContent;
+}, 1000)
