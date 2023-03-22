@@ -2,11 +2,13 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
+    background-image: url("../img/wallpaper\ petit.png");
 }
 
 .logoNavigateur {
     height: 4rem;
-    margin: 7px;
+    margin-top: 0.5rem;
+   
 }
 
 .navigateur {
@@ -16,11 +18,12 @@ body {
     border-bottom-right-radius: 1rem;
     color: white;
     height: 5rem;
+    box-shadow: 4px 4px 4px lightgray;
+
 }
 
 #buttonSave {
     float: right;
-    display: inline-block;
     background-color: #fb127b;
     border-radius: 10px;
     border: 4px double white;
@@ -32,6 +35,8 @@ body {
     cursor: pointer;
     margin: 5px;
     margin-top: 1rem;
+    box-shadow: 0px 2px 2px white;
+    margin-right: 1rem;
 }
 
 #buttonSave span {
@@ -69,8 +74,11 @@ body {
 #logoClicker {
     background-color: transparent;
     align-items: center;
-    color: #FB127B;
     border: none;
+    box-shadow: 0px 5px 5px lightgray;
+    border-radius: 25rem;
+    background-color: #FB127B;
+    border: 4px double white;
 }
 
 #logoClicker:hover {
@@ -112,108 +120,42 @@ body {
 }
 
 #counter-label {
-    background-color: #FB127B;
     padding: 1rem;
-    margin-top: 2rem;
-    border-style: inset;
+    margin-top: 5rem;
     border-radius: 30px;
     width: 10rem;
     font-weight: bold;
+    color: #fb127b;
+    text-shadow: 0px 4px 0px lightgray;
+    font-size: x-large;
 }
-
-/*------------*/
-
-
-/*div{
-    border-style: double;
-    height: 20rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-button {
-    height: 8rem;
-}*/
 
 footer {
-    margin: 0;
     text-align: center;
     position: fixed;
     bottom: 0;
     height: 10rem;
     width: 100%;
-    border-top-right-radius: 0.75rem;
-    border-top-left-radius: 0.75rem;
-    background-color: #FB127B;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+    background-color: #fb127b;
+    box-shadow: 0px -5px 5px lightgray;
 }
 
 h1 {
     margin-top: 0.25rem;
     height: 0.5rem;
     font-size: x-large;
-    font-family: Arial, Helvetica, sans-serif;
     color: white;
 }
 
+#BonusList{
+    display: grid;
+    grid-template-columns: calc(100%/4) calc(100%/4) calc(100%/4) calc(100%/4);
 
-#BonusList div h2,
-#BonusList div h3,
-#BonusList div h4 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: medium;
-    color: white;
+
 }
 
-#BonusList {
-    margin-top: 2.3rem;
-    display: flex;
-    justify-content: space-around;
-}
-
-#BonusList div {
-    background-color: #cf115a;
-    border-radius: 0.5rem;
-    height: 5.5rem;
-    width: 5.5rem;
-    z-index: revert;
-}
-
-#BonusList div h2 {
-    background-color: #ae0b4a;
-    border-radius: 0.1rem;
-    width: 90%;
-    margin-left: 5%;
-    margin-top: 7%;
-    font-size: smaller;
-    font-weight: lighter;
-}
-
-#BonusList div h3 {
-    background-color: #ae0b4a;
-    border-radius: 0.1rem;
-    width: 80%;
-    margin-left: 10%;
-    margin-top: -10%;
-    font-size: smaller;
-    font-weight: lighter;
-}
-
-#BonusList div h4 {
-    opacity: 0;
-    border-radius: 0.1rem;
-    margin-top: 0%;
-    width: 100%;
-   
-}
-
-#BonusList div img {
-    margin-bottom: 100%;
-    margin-top: -60%;
-    width: 45%;
-    height: 45%;
-}
 
 
 
@@ -221,7 +163,7 @@ h1 {
 @media screen and (min-width: 768px) {
 
     .clickers {
-        margin-top: 6rem;
+        margin-top: 13rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -229,9 +171,11 @@ h1 {
         text-align: center;
         margin-right: 20rem;
     }
-
-    button {
-        width: 200px;
+    
+    #logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     footer {
@@ -243,28 +187,18 @@ h1 {
         width: 20rem;
         border-top-left-radius: 1rem;
         border-bottom-left-radius: 1rem;
-        background-color: #FB127B;
+        background-color: #ae0b4a;
     }
 
     #BonusList {
-        margin-top: 2rem;
-        height: 90%;
-        flex-direction: column;
-        justify-content: flex-start;
+        grid-template-columns: 95%;
+        justify-items: center;
     }
 
     footer h1 {
         margin-top: 0.75rem;
     }
     
-    .clickers {
-        margin-top: 13rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        text-align: center;
-    }
 
     #BonusList div {
         margin-top: 3%;
