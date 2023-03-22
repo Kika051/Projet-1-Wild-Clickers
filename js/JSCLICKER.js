@@ -18,7 +18,7 @@ function updateDisplay(val) {
 
 
 }
-//julien
+/* julien */
 
 const compteur = document.querySelector('#counter-label');
 
@@ -61,4 +61,33 @@ developpeur.addEventListener('click', () =>{
 setInterval(() =>{
     ajoutPoints(nombreDeveloppeur * 2);
     document.querySelector('#developpeur').textContent;
+},1000)
+
+/* florian */
+
+const pc = document.querySelector('#PC')
+
+const nbPcAffichage = document.querySelector('#nbPc')
+
+const prixPcAffichage = document.querySelector('#prixPcAffichage')
+
+let nombrePc = 0;
+let prixPc = 50; 
+
+pc.addEventListener('click',() =>{
+    if(points >= prixPc){
+        retirerPoints(prixPc);
+        nombrePc++;
+        nbPcAffichage.textContent = nombrePc;
+        prixPc = prixPc *4;
+        prixPcAffichage.textContent = prixPc;
+    }
+    else{
+        alert('Pas assez de clic');
+    }
+})
+
+setInterval(()=>{
+    ajoutPoints (nombrePc *50);
+    document.querySelector ('#PC').textContent;
 },1000)
