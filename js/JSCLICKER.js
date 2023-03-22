@@ -1,8 +1,13 @@
-let points = 0
+let points = JSON.parse(localStorage.getItem("Points"))
+
+// Pacome
 
 function save(){
+    localStorage.setItem("Points",points)
     alert("Votre partie est sauvegarder")
 }
+
+//Pacome
 
 function incrementClick() {
     updateDisplay(++points);
