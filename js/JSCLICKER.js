@@ -69,7 +69,7 @@ function Save() {
     localStorage.setItem("Points",Points);
     localStorage.setItem("AmountStore",JSON.stringify(AmountStore));
     localStorage.setItem("PriceStore",JSON.stringify(PriceStore));
-    alert("Votre partie est sauvegarder!");
+    alert("Votre partie est sauvegarder !");
 };
 
 function Load () {
@@ -112,7 +112,7 @@ function Load () {
 
 function Reset() {
 
-    if (window.confirm('Merci de confirmé votre reset.')) {
+    if (window.confirm('Cette action va remettre votre compteur de points à zéro \nMerci de confirmer votre Reset')) {
         localStorage.setItem("Points",null)
         localStorage.setItem("AmountStore",null)
         localStorage.setItem("PriceStore",null)
@@ -220,7 +220,7 @@ for (let i = 0; i < QueryList.children.length; i++) {
             UpdatePoints()
             UpdateStore()
         } else {
-            alert('Pas assez de clic')
+            alert('Pas assez de clics')
         };
     })
 };
