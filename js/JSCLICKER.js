@@ -9,17 +9,17 @@ let Points = 0
 // Store
 
 let AmountStore = {
-    Developpeur : 0,
-    Pc : 0,
+    developpeur : 0,
+    PC : 0,
     Terminal : 0,
-    JavaScript : 0,
+    Javascript : 0,
 };
 
 let PriceStore = {
-    Developpeur : 0,
-    Pc : 0,
+    developpeur : 0,
+    PC : 0,
     Terminal : 0,
-    JavaScript : 0,
+    Javascript : 0,
 };
 
 /////////////////
@@ -27,10 +27,10 @@ let PriceStore = {
 ///////////////
 
 let DefaultPrice = {
-    Developpeur : 10,
-    Pc : 50,
+    developpeur : 10,
+    PC : 50,
     Terminal : 100,
-    JavaScript : 200,
+    Javascript : 200,
 };
 
 /////////////////////
@@ -44,30 +44,32 @@ let QueryPoints = document.querySelector('#counter-label')
 // Store
 
 let QueryAmount = {
-    Developpeur : document.querySelector('#nbDeveloppeur'),
-    Pc : document.querySelector('#nbPc'),
+    developpeur : document.querySelector('#nbDeveloppeur'),
+    PC : document.querySelector('#nbPc'),
     Terminal : document.querySelector('#nbTerminal'),
-    JavaScript : document.querySelector('#nbJavaScript'),
+    Javascript : document.querySelector('#nbJavascript'),
 };
 
 let QueryPrice = {
-    Developpeur : document.querySelector('#prixDeveloppeurAffichage'),
-    Pc : document.querySelector('#prixPcAffichage'),
+    developpeur : document.querySelector('#prixDeveloppeurAffichage'),
+    PC : document.querySelector('#prixPcAffichage'),
     Terminal : document.querySelector('#prixTerminalAffichage'),
-    JavaScript : document.querySelector('#prixJavaScriptAffichage'),
+    Javascript : document.querySelector('#prixJavascriptAffichage'),
 };
+
+let QueryList = document.querySelector('#BonusList')
 
 ////////////////
 // Functions //
 //////////////
 
-// Save & Load
+// Save & Load Data
 
 function Save() {
     localStorage.setItem("Points",Points);
     localStorage.setItem("AmountStore",JSON.stringify(AmountStore));
     localStorage.setItem("PriceStore",JSON.stringify(PriceStore));
-    alert("Votre partie est sauvegarder");
+    alert("Votre partie est sauvegarder!");
 };
 
 function Load () {
@@ -76,30 +78,59 @@ function Load () {
     PriceStoreData = JSON.parse(localStorage.getItem("PriceStore"));
 
     if (PriceStoreData == null) {
-       PriceStore = DefaultPrice;
+       PriceStore = {...DefaultPrice};
     } else {
        PriceStore = PriceStoreData;
     };
 
     if (AmountStoreData !== null) {
        AmountStore = AmountStoreData;
+    } else {
+        AmountStore = {
+            developpeur : 0,
+            PC : 0,
+            Terminal : 0,
+            Javascript : 0,
+        };
     };
+
+    if (PointsData !== null) {
+        Points = PointsData
+    } else {
+        Points = 0
+    };
+
+
+    console.log(PriceStore)
+    console.log(Points)
 
     UpdateStore()
     UpdatePoints()
 };
 
+// Reset Data
+
+function Reset() {
+
+    if (window.confirm('Merci de confirmé votre reset.')) {
+        localStorage.setItem("Points",null)
+        localStorage.setItem("AmountStore",null)
+        localStorage.setItem("PriceStore",null)
+        Load()
+    };
+}
+
 // Visual Update
 
 function UpdateStore() {
-    QueryAmount.Developpeur.textContent = AmountStore.Developpeur;
-    QueryAmount.Pc.textContent = AmountStore.Pc;
+    QueryAmount.developpeur.textContent = AmountStore.developpeur;
+    QueryAmount.PC.textContent = AmountStore.PC;
     QueryAmount.Terminal.textContent = AmountStore.Terminal;
-    QueryAmount.JavaScript.textContent = AmountStore.JavaScript;
-    QueryPrice.Developpeur.textContent = PriceStore.Developpeur;
-    QueryPrice.Pc.textContent = PriceStore.Pc;
+    QueryAmount.Javascript.textContent = AmountStore.Javascript;
+    QueryPrice.developpeur.textContent = PriceStore.developpeur;
+    QueryPrice.PC.textContent = PriceStore.PC;
     QueryPrice.Terminal.textContent = PriceStore.Terminal;
-    QueryPrice.JavaScript.textContent = PriceStore.JavaScript;
+    QueryPrice.Javascript.textContent = PriceStore.Javascript;
 };
 
 function UpdatePoints() {
@@ -120,6 +151,10 @@ function SetPoints(Amount) {
     Points = Amount;
 };
 
+function MultiPoints(Multiplication) {
+    Points *= Multiplication
+};
+
 // Amount Control
 
 function AddAmount(Name,Amount) {
@@ -133,6 +168,10 @@ function RemoveAmount(Name,Amount) {
 function SetAmount(Name,Amount) {
     AmountStore[Name] = Amount;
 };
+
+function MultiAmount(Name,Multiplication) {
+    AmountStore[Name] *= Multiplication
+}
 
 // Price Control
 
@@ -148,8 +187,48 @@ function SetPrice(Name,Amount) {
     PriceStore[Name] = Amount;
 };
 
+function MultiPrice(Name,Multiplication) {
+    PriceStore[Name] *= Multiplication
+}
+
 /////////////
 // Events //
 ///////////
 
+// Load
+
 Load()
+
+// Clicker
+
+function Clicker() {
+    AddPoints(1)
+    UpdatePoints()
+};
+
+// Store
+
+for (let i = 0; i < QueryList.children.length; i++) {
+    
+    let Button = QueryList.children[i]
+
+    Button.addEventListener('click', () => {
+        if (Points >= PriceStore[Button.id]) {
+            RemovePoints(PriceStore[Button.id])
+            AddAmount(Button.id,1)
+            MultiPrice(Button.id,2)
+            UpdatePoints()
+            UpdateStore()
+        } else {
+            alert('Pas assez de clic')
+        };
+    })
+};
+
+setInterval(() => {
+    AddPoints(AmountStore.developpeur * 2)
+    AddPoints(AmountStore.PC * 5)
+    AddPoints(AmountStore.Terminal * 10)
+    AddPoints(AmountStore.Javascript * 20)
+    UpdatePoints()
+}, 1000)
