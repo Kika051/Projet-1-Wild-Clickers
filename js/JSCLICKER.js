@@ -55,7 +55,7 @@ developpeur.addEventListener('click', () =>{
         prixDeveloppeurAffichage.textContent = prixDeveloppeur;
     }
     else{
-        alert('Pas assez de clic');
+        alert('Pas assez de clics');
     }
 })
 
@@ -84,7 +84,7 @@ pc.addEventListener('click',() =>{
         prixPcAffichage.textContent = prixPc;
     }
     else{
-        alert('Pas assez de clic');
+        alert('Pas assez de clics');
     }
 })
 
@@ -113,7 +113,7 @@ Terminal.addEventListener('click', () =>{
         prixTerminalAffichage.textContent = prixTerminal;
     }
     else{
-        alert('Pas assez de clic');
+        alert('Pas assez de clics');
     }
 })
 
@@ -136,7 +136,7 @@ compteurjs.addEventListener('click', function () {
         document.querySelector('#prixJavascriptAffichage').textContent = prixJavascriptAffichage;
     }
     else {
-        alert('il vous faut encore cliquer un peu');
+        alert('Pas assez de clics');
     }
 });
 
