@@ -12,48 +12,49 @@
 <body>
 
     <div class="navigateur">
-        <img class="logoNavigateur" src="img/logo-wild-code-school-white.png" alt="Wild code school">
-        <button id="buttonSave" onclick="save()">
+        <img class="logoNavigateur" src="img/logo clicker.png" alt="Wild clicker">
+        <button id="buttonSave" onclick="Save()">
             <span>Save</span>
         </button>
+        <button id="buttonReset" onclick="Reset()">
+            <span>Reset</span>
+        </button>
     </div>
-<div class="clickers">
-        <button id="logoClicker" onclick="incrementClick()">
-            <img src="img/logo-detouree.png" onclick="" alt="Mon logo" id="logo">
+    <div class="clickers">
+        <button id="logoClicker" onclick="Clicker()">
+            <img src="img/clickers blanc.png" onclick="" alt="Mon logo" id="logo">
         </button>
         <span id="counter-label">0</span>
     </div>
+
     <footer>
         <h1> STORE </h1>
+
         <div id="BonusList">
 
-            <div id="Bonus1">
-                <h2> Dev </h2>
-                <h3> Prix</h3>
-                <h4>Quantité</h4>
-                <img src="img/develloper.png" alt="Devellopeur">
+            <div id="developpeur">
+                <span id="prixDeveloppeurAffichage">10</span>
+                <span id="nbDeveloppeur">0</span>
+                <img src="img/develloper.png" alt="item developpeur">
             </div>
 
-            <div id="Bonus2">
-                <h2> PC </h2>
-                <h3> Prix</h3>
-                <h4>Quantité </h4>
-                <img src="img/pc copie.png" alt="PC">
+            <div id="PC">
+                <span id="prixPcAffichage">50</span>
+                <span id="nbPc">0</span>
+                <img src="img/pc copie.png" alt="item PC">
             </div>
 
-            <div id="Bonus3">
-                <h2> Terminal </h2>
-                <h3> Prix </h3>
-                <h4> Quantité</h4>
-                <img src="img/Terminal.png" alt="Terminal">
+            <div id="Terminal">
+                <span id="prixTerminalAffichage">100</span>
+                <span id="nbTerminal">0</span>
+                <img src="img/Terminal.png" alt="item Terminal">
             </div>
 
-            <div id="Bonus4">
-                <h2> JS </h2>
-                <h3> Prix</h3>
-                <h4> Quantité</h4>
-                <img src="img/JS.png" alt="Logo java">
-</div>
+            <div id="Javascript">
+                <span id="prixJavascriptAffichage">200</span>
+                <span id="nbJavascript">0</span>
+                <img src="img/JS.png" alt="item developpeur">
+            </div>
         </div>
     </footer>
 
