@@ -1,69 +1,155 @@
-let points = JSON.parse(localStorage.getItem("Points"))
+////////////////
+// User Data //
+//////////////
 
-// Pacome
+// Points
 
-function save(){
-    localStorage.setItem("Points",points)
-    alert("Votre partie est sauvegarder")
-}
+let Points = 0
 
-//Pacome
+// Store
 
-function incrementClick() {
-    updateDisplay(++points);
-}
+let AmountStore = {
+    Developpeur : 0,
+    Pc : 0,
+    Terminal : 0,
+    JavaScript : 0,
+};
 
-function resetCounter() {
-    counterVal = 0;
-    updateDisplay(points);
-}
+let PriceStore = {
+    Developpeur : 0,
+    Pc : 0,
+    Terminal : 0,
+    JavaScript : 0,
+};
 
-function updateDisplay(val) {
-    document.getElementById("counter-label").innerHTML = val;
+/////////////////
+// Store Data //
+///////////////
 
+let DefaultPrice = {
+    Developpeur : 10,
+    Pc : 50,
+    Terminal : 100,
+    JavaScript : 200,
+};
 
-}
-//julien
+/////////////////////
+// Query Selector //
+///////////////////
 
-const compteur = document.querySelector('#counter-label');
+// Points
 
-function miseAjourAffichagePoints(){
-    compteur.textContent = points;
-}
+let QueryPoints = document.querySelector('#counter-label')
 
-function ajoutPoints(valeur){
-    points = points + valeur;
-    miseAjourAffichagePoints();
-}
+// Store
 
-function retirerPoints(valeur){
-    points = points - valeur;
-    miseAjourAffichagePoints();
-}
+let QueryAmount = {
+    Developpeur : document.querySelector('#nbDeveloppeur'),
+    Pc : document.querySelector('#nbPc'),
+    Terminal : document.querySelector('#nbTerminal'),
+    JavaScript : document.querySelector('#nbJavaScript'),
+};
 
-const developpeur = document.querySelector('#developpeur');
+let QueryPrice = {
+    Developpeur : document.querySelector('#prixDeveloppeurAffichage'),
+    Pc : document.querySelector('#prixPcAffichage'),
+    Terminal : document.querySelector('#prixTerminalAffichage'),
+    JavaScript : document.querySelector('#prixJavaScriptAffichage'),
+};
 
-const nbDeveloppeuraffichage = document.querySelector('#nbDeveloppeur');
+////////////////
+// Functions //
+//////////////
 
-const prixDeveloppeurAffichage = document.querySelector('#prixDeveloppeurAffichage');
+// Save & Load
 
-let nombreDeveloppeur = 0;
-let prixDeveloppeur = 10;
+function Save() {
+    localStorage.setItem("Points",Points);
+    localStorage.setItem("AmountStore",JSON.stringify(AmountStore));
+    localStorage.setItem("PriceStore",JSON.stringify(PriceStore));
+    alert("Votre partie est sauvegarder");
+};
 
-developpeur.addEventListener('click', () =>{
-    if (points >=prixDeveloppeur){
-        retirerPoints(prixDeveloppeur);
-        nombreDeveloppeur++;
-        nbDeveloppeuraffichage.textContent = nombreDeveloppeur;
-        prixDeveloppeur = prixDeveloppeur *2;
-        prixDeveloppeurAffichage.textContent = prixDeveloppeur;
-    }
-    else{
-        alert('Pas assez de clic');
-    }
-})
+function Load () {
+    PointsData = JSON.parse(localStorage.getItem("Points"));
+    AmountStoreData = JSON.parse(localStorage.getItem("AmountStore"));
+    PriceStoreData = JSON.parse(localStorage.getItem("PriceStore"));
 
-setInterval(() =>{
-    ajoutPoints(nombreDeveloppeur * 2);
-    document.querySelector('#developpeur').textContent;
-},1000)
+    if (PriceStoreData == null) {
+       PriceStore = DefaultPrice;
+    } else {
+       PriceStore = PriceStoreData;
+    };
+
+    if (AmountStoreData !== null) {
+       AmountStore = AmountStoreData;
+    };
+
+    UpdateStore()
+    UpdatePoints()
+};
+
+// Visual Update
+
+function UpdateStore() {
+    QueryAmount.Developpeur.textContent = AmountStore.Developpeur;
+    QueryAmount.Pc.textContent = AmountStore.Pc;
+    QueryAmount.Terminal.textContent = AmountStore.Terminal;
+    QueryAmount.JavaScript.textContent = AmountStore.JavaScript;
+    QueryPrice.Developpeur.textContent = PriceStore.Developpeur;
+    QueryPrice.Pc.textContent = PriceStore.Pc;
+    QueryPrice.Terminal.textContent = PriceStore.Terminal;
+    QueryPrice.JavaScript.textContent = PriceStore.JavaScript;
+};
+
+function UpdatePoints() {
+    QueryPoints.textContent = Points;
+};
+
+// Points Control
+
+function AddPoints(Amount) {
+    Points += Amount;
+};
+
+function RemovePoints(Amount) {
+    Points -= Amount;
+};
+
+function SetPoints(Amount) {
+    Points = Amount;
+};
+
+// Amount Control
+
+function AddAmount(Name,Amount) {
+    AmountStore[Name] += Amount;
+};
+
+function RemoveAmount(Name,Amount) {
+    AmountStore[Name] -= Amount;
+};
+
+function SetAmount(Name,Amount) {
+    AmountStore[Name] = Amount;
+};
+
+// Price Control
+
+function AddPrice(Name,Amount) {
+    PriceStore[Name] += Amount;
+};
+
+function RemovePrice(Name,Amount) {
+    PriceStore[Name] -= Amount;
+};
+
+function SetPrice(Name,Amount) {
+    PriceStore[Name] = Amount;
+};
+
+/////////////
+// Events //
+///////////
+
+Load()
